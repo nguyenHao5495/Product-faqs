@@ -1,0 +1,10 @@
+*.iml
+*.log
+*.swp
+.DS_Store
+.idea/
+.nuxt/
+.vscode/
+cache/
+upload/
+conn-shopify.php

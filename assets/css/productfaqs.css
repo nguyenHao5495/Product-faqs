@@ -1,0 +1,346 @@
+.ot-product-faqs img {
+	max-width: 100%;
+}
+.ot-product-faqs {
+	margin: 15px 0;
+    overflow: hidden;
+    width: 100%;
+    font-size: 14px;
+}
+.ot-product-faqs .faqs-header-title {
+	font-size: 24px;
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+.ot-product-faqs .question-button button{
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 10px 30px;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    user-select: none;
+    border: 0;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: normal;
+}
+.ot-product-faqs .question-button button:hover,.ot-product-faqs .question-button button:focus{
+    opacity: .8;
+    filter: alpha(opacity=80);
+}
+.ot-product-faqs .question-button button:after {
+    content: none !important;
+}
+
+.ot-product-faqs .question-answer-box {
+    margin-top: 15px;
+}
+
+/* Question item */
+.ot-product-faqs .question-item {
+	margin-bottom: 15px;
+}
+.ot-product-faqs .question-item + .question-item{
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+.ot-product-faqs .question-item .question-item-col-1 {
+	width: 10%;
+    text-align: center;
+    float: left;
+}
+.ot-product-faqs .question-item .question-item-col-1 .question-vote {
+	line-height: normal;
+}
+.ot-product-faqs .question-item .question-item-col-1 p {
+	margin: 0;
+}
+.ot-product-faqs .question-item .question-item-col-1 a.question-vote-button {
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    text-indent: -9999em;
+    font-size: 1px;
+    border: none;
+    width: 20px;
+    height: 16px;
+    padding:0;
+    background-color: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+.ot-product-faqs .question-item .question-item-col-1 a.question-vote-up{
+	background: url("../images/up_arrow.png");
+	vertical-align: top;
+}
+.ot-product-faqs .question-item .question-item-col-1 a.question-vote-down{
+	background: url("../images/down_arrow.png");
+	vertical-align: top;
+}
+.ot-product-faqs .question-item .question-item-col-2 {
+	width: 90%;
+    float: right;
+    padding-left: 15px;
+}
+.ot-product-faqs .question-item,.ot-product-faqs .question-list-content {
+    overflow: hidden;
+    position: relative;
+}
+.ot-product-faqs .question-list-content h3,.ot-product-faqs .answer-list-content h4 {
+	margin: 0;
+}
+.ot-product-faqs .question-list-content h3{
+    font-size: 18px;
+    line-height: 1;
+}
+.ot-product-faqs .locked-question {
+    position: absolute;
+    width: 16px;
+    right: 0;
+    top: 0;
+}
+.ot-product-faqs .answer-list-content h4{
+    font-size: 16px;
+    line-height: 1;
+}
+.ot-product-faqs .question-list-content .publishdate {
+	font-size: 13px;
+    color: #999;
+}
+.ot-product-faqs .question-list-content .question-content {
+	padding: 10px 0;
+}
+.ot-product-faqs .answer-list-content {
+	display: block;
+    position: relative;
+    margin: 5px 0 0 0;
+    padding: 10px 15px;
+    clear: both;
+    color: #333;
+    line-height: 24px;
+    background: #f8f8f8;
+    border: 1px solid #dfdfdf;
+}
+.ot-product-faqs .answer-list-content:after,.ot-product-faqs .answer-list-content:before {
+    top: -20px;
+    left: 18px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.ot-product-faqs .answer-list-content:before {
+    border-color: rgba(238,238,238,0);
+    border-bottom-color: #f8f8f8;
+    border-width: 11px;
+    margin-left: -11px;
+    z-index: 1;
+}
+.ot-product-faqs .answer-list-content:after {
+    border-color: rgba(255,255,255,0);
+    border-bottom-color: #dfdfdf;
+    border-width: 10px;
+    margin-left: -10px;
+}
+.ot-product-faqs .answer-list-content .answer-content {
+	
+}
+.ot-product-faqs .answer-list-content .answer-date {
+    color: #999;
+    font-size: 13px;
+}
+.ot-product-faqs .answer-list-content .open-reply-form a,.ot-product-faqs .answer-list-content .close-reply-form a,.ot-product-faqs .answer-list-content .loadmore-answer a,.ot-product-faqs .answer-list-content .collapse-answer a {
+	color: #288ad9;
+    cursor: pointer;
+}
+.ot-product-faqs .answer-list-content .loadmore-answer span {
+	padding-right: 30px;
+}
+.ot-product-faqs .answer-list-content .more-answer,.ot-product-faqs .answer-list-content .collapse-answer,.ot-product-faqs .answer-list-content .close-reply-form {
+	display: none;
+}
+.ot-product-faqs .answer-list .answer-item {
+	margin-bottom: 7px;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.ot-product-faqs .reply-form {
+    display: none;
+    overflow: hidden;
+    margin: 0;
+}
+.ot-product-faqs .reply-form input {
+	font-size: 0.8em;
+	padding: 0 10px;
+    height: 27px;
+    border: 1px solid #ddd;
+    margin: 0;
+}
+.ot-product-faqs .reply-form input:focus {
+    outline: none;
+}
+.ot-product-faqs .reply-form .reply_name,.ot-product-faqs .reply-form .reply_email {
+	width: 25%;
+    float: left;
+    padding-right: 10px;
+}
+.ot-product-faqs .reply-form .reply_name input,.ot-product-faqs .reply-form .reply_email input,.ot-product-faqs .reply-form .reply_answer input{
+	width: 100%;
+}
+.ot-product-faqs .reply-form .reply_answer {
+    width: 40%;
+    float: left;
+}
+.ot-product-faqs .reply-form .reply_submit {
+    width: 10%;
+    float: right;
+}
+.ot-product-faqs .reply-form .reply_submit input {
+    float: right;
+    border: none;
+    height: 27px;
+    padding: 0 0.5rem;
+    cursor: pointer;
+}
+.ot-product-faqs .question-loadmore,.ot-product-faqs .question-nomore {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 30px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none!important;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+.ot-product-faqs .question-loadmore:hover,.ot-product-faqs .question-loadmore:focus,.ot-product-faqs .question-nomore:hover,.ot-product-faqs .question-nomore:focus {
+    color: #FFF;
+}
+.ot-product-faqs .question-nomore {
+    display: none;
+    cursor: not-allowed;
+}
+
+/* Question Form */
+.ot-product-faqs .question-form {
+    margin: 10px 0;
+    display: none;
+}
+.ot-product-faqs .question-form #faqs_name {
+    width: 50%;
+    padding-right: 5px;
+    float: left;
+}
+.ot-product-faqs .question-form #faqs_email {
+    width: 50%;
+    float: right;
+    padding-left: 5px;
+}
+.ot-product-faqs .question-form input[type="text"],.ot-product-faqs .question-form input[type="email"],.ot-product-faqs .question-form textarea {
+    border: 1px solid #ddd;
+    color: #333 !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    line-height: 1;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 15px;
+    width: 100%;
+}
+.ot-product-faqs .question-form #faqs_submit #question-form-submit {
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 10px 30px;
+    line-height: 1;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    user-select: none;
+    border: 0;
+    font-weight: 500;
+    font-size: 13px;
+}
+.ot-product-faqs .buttonDisabled {
+    pointer-events: none;
+}
+.ot-product-faqs .ot-faqs-notice-addquestion-success,.ot-product-faqs .ot-faqs-notice-addreply-success {
+    margin: 20px 0;
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 13px;
+    display: none;
+}
+.ot-product-faqs .ot-faqs-notice-addquestion-error,.ot-product-faqs .ot-faqs-notice-addreply-error {
+    margin: 20px 0;
+    color: #FFF;
+    background-color: #e01f18;
+    border-color: #e01f18;
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 13px;
+    display: none;
+}
+.ot-product-faqs .ot-faqs-notice-addreply-success,.ot-product-faqs .ot-faqs-notice-addreply-error {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 12px;
+}
+
+@media(min-width: 992px){
+    .ot-product-faqs .faqs-header-title {
+        display: inline-block;
+    }
+    .ot-product-faqs .question-button {
+        float: right;
+    }
+}
+@media screen and (max-width: 991px)  {
+	.ot-product-faqs .question-answer-box .question-item-col-1 {
+        width: 15%;
+    }
+    .ot-product-faqs .question-answer-box .question-item-col-2 {
+        width: 85%;
+    }
+    .ot-product-faqs .question-form #faqs_name {
+        width: 100%;
+        padding-right: 0;
+        float: none;
+    }
+    .ot-product-faqs .question-form #faqs_email {
+        width: 100%;
+        padding-left: 0;
+        float: none;
+    }
+    .ot-product-faqs .reply-form .reply_name, .ot-product-faqs .reply-form .reply_email {
+        width: 50%;
+    }
+    .ot-product-faqs .reply-form .reply_answer {
+        width: 100%;
+        padding-right: 10px;
+        margin: 10px 0;
+    }
+    .ot-product-faqs .reply-form .reply_submit {
+        width: 100%;
+        padding-right: 10px;
+    }
+}

@@ -1,0 +1,281 @@
+@import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+%smooth-trans {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+%smooth-trans1 {
+	-webkit-transition: all 0.6s ease;
+	-moz-transition: all 0.6s ease;
+	transition: all 0.6s ease;
+}
+
+body {
+    font-family: "Roboto Condensed",sans-serif;
+    font-size: 14px;
+    background-color: #f4f6f8;
+    
+}
+.wrapper{
+  margin: 0 auto;
+  padding: 30px 5%;
+}
+//-------------Tabs------------//
+.Polaris-Tabs {
+    justify-content: left;
+    background: #fff;
+    box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px 0 rgba(63,63,68,.15);
+    box-shadow: var(--p-card-shadow,0 0 0 1px rgba(63,63,68,.05),0 1px 3px 0 rgba(63,63,68,.15));
+    button{
+      &:focus{
+        box-shadow: none;
+      }
+    }
+    .Polaris-Tabs__Tab{
+      margin: 0 0.5em;
+      .title_tabs{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+          text-transform: uppercase;
+          display: block;
+          font-weight: 500;
+          color: rgba(0,0,0,0.7);
+          font-size: 13px;
+        }
+        .Polaris-Icon{
+          margin:inherit;
+          margin-left: 10px;
+          svg{
+            fill: #ccc;
+          }
+          height: 1.6rem;
+        }
+      }
+      &.Polaris-Tabs__Tab--selected{
+        .Polaris-Tabs__Title{
+          border-bottom: var(--p-override-none, 0.3rem) solid #6371c7
+        }
+        .title_tabs{
+          
+          .Polaris-Icon{
+            animation: mover 0.8s infinite alternate;
+            position: relative;
+          }
+          @-webkit-keyframes mover {
+            from{
+              -webkit-transform:rotate(30deg);
+              -moz-transform:rotate(30deg);
+              -o-transform:rotate(30deg);
+          }
+          to{
+              -webkit-transform:rotate(-30deg);
+              -moz-transform:rotate(-30deg);
+              -o-transform:rotate(-30deg);
+          }
+          }
+          @keyframes mover {
+              from{
+                -webkit-transform:rotate(30deg);
+                -moz-transform:rotate(30deg);
+                -o-transform:rotate(30deg);
+            }
+            to{
+                -webkit-transform:rotate(-30deg);
+                -moz-transform:rotate(-30deg);
+                -o-transform:rotate(-30deg);
+            }
+          }
+          
+          span{
+            color: #6371c7;
+          }
+          svg{
+            fill: #6371c7
+          }
+        }
+        color: #6371c7;
+      }
+    }
+}
+//------------Product-item-------------//
+.product-item{
+  display: flex;
+  align-items: center;
+  .product-image{
+    overflow: hidden;
+    vertical-align: middle;
+    padding-right: 15px;
+    img{
+      max-width: 60px;
+      max-height: 60px;
+    }
+  }
+  .product-title{
+    button{
+      @extend %smooth-trans;
+      .Polaris-Button__Text{
+        text-decoration: none;
+      }
+      &:hover{
+        text-decoration: none;
+        color: #6371c7;
+      }
+      
+    }
+  }
+}
+//---custom margin, padding-----//
+.margin--top--20{
+  margin-top: 20px;
+}
+.margin--bottom--20{
+  margin-bottom: 20px;
+}
+.margin--top--10{
+  margin-top: 10px;
+}
+.margin--bottom--10{
+  margin-bottom: 10px;
+}
+.padding--top--20{
+  padding-top: 20px;
+}
+.padding--bottom--20{
+  padding-bottom: 20px;
+}
+//-----------Sorter Title----------//
+.ant-table-column-sorters{
+  width: 100%;
+  justify-content: space-between;
+  >span{
+    font-weight: bold;
+  }
+}
+
+//------------css pagination----------------//
+
+.ant-pagination-item{
+  @extend %smooth-trans;
+  &:hover{
+    border-color: #6371c7;
+    a{
+      color: #6371c7
+    }
+  }
+  &.ant-pagination-item-active{
+    border-color: #6371c7;
+    a{
+      color: #6371c7
+    }
+  }
+}
+.ant-pagination-next ,.ant-pagination-prev{
+
+    @extend %smooth-trans;
+  &:hover{
+    .ant-pagination-item-link{
+      border-color: #6371c7;
+      svg{
+        fill: #6371c7;
+      }
+    }
+    
+  }
+
+}
+//-------------cSS Positon--------------// 
+.text-center{
+  text-align: center;
+}
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
+.flex{
+  display: flex;
+  align-items: center;
+}
+//-----------Product-deltail --------------//
+.Polaris-Page-Header {
+  padding-top: 0;
+}
+.product-detail{
+  .product-des{
+    display: flex;
+  }
+  .prodcut-image{
+    margin-right: 15px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    img{
+      max-height: 150px;
+      border-radius: 6px;
+    }
+  }
+  .prodcut-title{
+    a{
+      font-size: 15px;
+      letter-spacing: 1px;
+      color: #6371c7;
+      position: relative;
+      &::after{
+        content: '';
+        display: block;
+        border-bottom: 1px solid #6371c7;
+        width: 0;
+        position: absolute;
+        left: 0;
+        -webkit-transition: 0.7s ease;
+        transition: 0.7s ease;
+      }
+      &:hover{
+        &::after{
+          width: 100%;
+        }
+      }
+    }
+    .Polaris-Stack{
+      .Polaris-Stack__Item:nth-child(1){
+        .Polaris-Badge{
+          background-color: #bbe5b3;
+        }
+        
+      }
+    }
+    
+  }
+}
+//-----------answer_lists--------------//
+.answer_lists{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom:10px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  .answer_title{
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    .answer_cus{
+      padding-left:10px;
+      
+    }
+    .Polaris-Icon{
+      svg{
+        fill: #ccc;
+      }
+    }
+  }
+  .answer_time{
+    color: #999;
+  }
+
+}
