@@ -1,10 +1,11 @@
 <?php
+
 ini_set('display_errors', TRUE);
 error_reporting(E_ALL);
 require '../../vendor/autoload.php';
 use sandeepshetty\shopify_api;
 require '../../conn-shopify.php';
-require '../../help.php';
+require '../../helper.php'; 
 if (isset($_GET["action"])) {
     $action = $_GET["action"];
     $shop = $_GET["shop"];
