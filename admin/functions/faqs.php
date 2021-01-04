@@ -9,6 +9,8 @@ require '../../helper.php';
 if (isset($_GET["action"])) {
     $action = $_GET["action"];
     $shop = $_GET["shop"];
+    var_dump($db);
+    die();
     $shopify = shopifyInit($db, $shop, $appId);
     if($action == "getCountProductShop"){
         $count = $shopify("GET", "/admin/products/count.json");
