@@ -60,7 +60,7 @@ const ProductList = () => {
                     </Page>
                     : <Card sectioned>
                         <div className="margin--bottom--20">
-                            <Button primary loading={loading} onClick={resetData}>Reset product</Button>
+                            <Button primary loading={loading} onClick={resetData}><i className="fas fa-sync" ></i> Reset product</Button>
                         </div>
                         <Table
                             dataSource={data}

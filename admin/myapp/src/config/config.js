@@ -16,6 +16,6 @@ const getUrlParameter = function getUrlParameter(sParam) {
 };
 const config = {
     shop: getUrlParameter("shop"),
-    rootLink: "https://haolocal.omegatheme.com/omegaApp/product-faqs/",
+    rootLink: "https://haolocal.omegatheme.com/omegaApp/product-faqs",
 }
 export default config

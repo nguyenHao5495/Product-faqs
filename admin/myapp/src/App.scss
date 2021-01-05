@@ -21,6 +21,14 @@ body {
   margin: 0 auto;
   padding: 30px 5%;
 }
+h1,h2,h3,h4,h5,h6{
+  font-weight: 600;
+}
+.Polaris-Page {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 109.8rem;
+}
 //-------------Tabs------------//
 .Polaris-Tabs {
     justify-content: left;
@@ -200,11 +208,15 @@ body {
   display: flex;
   align-items: center;
 }
+.bold{
+  font-weight: bold;
+}
 //-----------Product-deltail --------------//
 .Polaris-Page-Header {
   padding-top: 0;
 }
 .product-detail{
+
   .product-des{
     display: flex;
   }
@@ -247,6 +259,9 @@ body {
         }
         
       }
+      .Polaris-Badge{
+        font-size: 1rem;
+      }
     }
     
   }
@@ -265,7 +280,7 @@ body {
     display: flex;
     align-items: center;
     .answer_cus{
-      padding-left:10px;
+      padding-left:5px;
       
     }
     .Polaris-Icon{
@@ -278,4 +293,45 @@ body {
     color: #999;
   }
 
+}
+
+//-------------faqs-item---------------//
+.faqs-item{
+  .Polaris-Badge{
+    font-size: 1rem;
+  }
+  .Published{
+    .Polaris-Badge{
+      background-color: #bbe5b3
+    }
+    
+  }
+}
+.faqs-edit {
+  display: flex;
+  align-items: center;
+  div{
+    padding-right: 15px;
+    &:last-child{
+      padding-right: 0;
+    }
+  }
+  .lock{
+    svg{
+      fill: #666;
+    }
+    i{
+      font-size: 17px;
+    }
+  }
+  .edit{
+    svg{
+      fill: #666;
+    }
+  }
+  .delete{
+    svg{
+      fill: #bd4747;
+    }
+  }
 }
