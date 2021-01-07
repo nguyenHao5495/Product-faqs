@@ -19,7 +19,6 @@ const { Column } = Table;
 let dataTest = []
 const Productlayout = () => {
     const [dataProduct, setdataProduct] = useState();
-    const [dataForm, setdataForm] = useState({});
     const [faqs, setFaqs] = useState(dataTest);
     const [active, setActive] = useState(false);
     const [activeModal, setActiveModal] = useState(false);
@@ -43,12 +42,6 @@ const Productlayout = () => {
         return () => clearTimeout(timer);
 
     }, []);
-    useEffect(() => {
-        if (store.getState().store1) {
-            setdataForm(store.getState().store1.dataQuestion)
-        }
-    }, []);
-
     useEffect(() => {
         if (dataProduct) {
             setActive(true);
@@ -136,6 +129,20 @@ const Productlayout = () => {
                 onAction: () => DeleteFaqbyApi(id),
             })
             setContent("Are you sure you want to delete this question? This action cannot be undone.");
+            setActiveModal(!activeModal);
+        }
+    }, [activeModal]);
+    const EditChangeModal = useCallback((data) => {
+        setError(false);
+        if (data) {
+            setTitle("Edit question");
+            setLock({
+                content: 'Save',
+                Primary: false,
+            })
+            setContent(
+                <Formlayout data={data} />
+            )
             setActiveModal(!activeModal);
         }
     }, [activeModal]);
@@ -252,9 +259,7 @@ const Productlayout = () => {
         const dataId = {
             product_id: dataProduct.id.toString()
         }
-        console.log(dataForm);
-
-        let dataFormNew = Object.assign({}, dataForm, dataId);
+        let dataFormNew = Object.assign({}, store.getState().store1.dataQuestion, dataId);
         console.log(dataFormNew);
         if (dataFormNew) {
             let formData = new FormData();
@@ -406,7 +411,7 @@ const Productlayout = () => {
                                                 }
                                             </div>
                                             <div className="edit">
-                                                <Button plain>
+                                                <Button plain onClick={() => EditChangeModal(record)}>
                                                     <Icon
                                                         source={EditMinor} />
                                                 </Button>

@@ -3,11 +3,11 @@ import { TextField, FormLayout, Select } from '@shopify/polaris';
 import { DatePicker } from 'antd';
 import store from '../Store';
 import moment from 'moment';
-const Formlayout = () => {
+const Formlayout = (data) => {
     const [selectedQuestion, setSelectedQuestion] = useState('1');
     const [selectedAnswer, setSelectedAnswer] = useState('1');
-    const [valueTimePublish, setValueTimePublish] = useState(new Date().toLocaleString());
-    const [valueTimeAnswer, setValueTimeAnswer] = useState(new Date().toLocaleString());
+    const [valueTimePublish, setValueTimePublish] = useState(new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString());
+    const [valueTimeAnswer, setValueTimeAnswer] = useState(new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString());
     const [nameQuestion, setNameQuestion] = useState("");
     const [emailQuestion, setEmailQuestion] = useState("");
     const [contentQuestion, setContentQuestion] = useState("");
@@ -17,14 +17,20 @@ const Formlayout = () => {
     const options = [
         { label: 'Yes', value: '1' },
         { label: 'No', value: '0' },
-
     ];
     const options1 = [
         { label: 'Yes', value: '1' },
         { label: 'No', value: '0' },
-
     ];
     useEffect(() => {
+        if (data) {
+            console.log(data);
+            setNameQuestion(data.data.faqs_name);
+            setEmailQuestion(data.data.faqs_email);
+            setContentQuestion(data.data.faqs_question);
+            setValueTimePublish(data.data.publishdate);
+            setSelectedQuestion(data.data.publish)
+        }
         let dataQuestion = {
             product_id: "",
             faqs_name: nameQuestion,
@@ -42,6 +48,7 @@ const Formlayout = () => {
             type: "DATA_QUESTION",
             dataQuestion: dataQuestion
         })
+        console.log(dataQuestion);
     });
     const handleSelectChange = useCallback((value) => setSelectedQuestion(value), []);
     const handleSelectChange1 = useCallback((value) => setSelectedAnswer(value), []);
