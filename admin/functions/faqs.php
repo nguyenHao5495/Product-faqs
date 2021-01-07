@@ -217,6 +217,7 @@ if (isset($_POST['action'])) {
     if ($action == "lockQuestion") {
         $id = $_POST["id"];
         $db->query("UPDATE product_faqs_database SET locked='1' WHERE shop = '$shop' AND id = '$id'");
+        echo("True")
     }
     if ($action == "unlockQuestion") {
         $id = $_POST["id"];

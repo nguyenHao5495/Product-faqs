@@ -317,11 +317,19 @@ h1,h2,h3,h4,h5,h6{
     }
   }
   .lock{
+    @extend %smooth-trans;
     svg{
       fill: #666;
     }
     i{
       font-size: 17px;
+      color: #666;
+      @extend %smooth-trans;
+    }
+    &:hover{
+      i{
+        color: #6371c7;
+      }
     }
   }
   .edit{
@@ -331,7 +339,30 @@ h1,h2,h3,h4,h5,h6{
   }
   .delete{
     svg{
-      fill: #bd4747;
+      fill: #666;
     }
+  }
+}
+//--------------addQuestion-------------------//
+.addQuestion{
+  .Polaris-Button__Text{
+    display: flex;
+    align-items: center;
+    .Polaris-Icon{
+      margin-right: 15px;
+    }
+  }
+}
+.date_time{
+  label{
+    display: block;
+    margin-bottom: 0.3rem;
+    width: 100%;
+  }
+  .ant-picker{
+    border: 1px solid #c4cdd5;
+    padding: 5px 11px 5px;
+    width: 100%;
+    background-color: #e9ecef;
   }
 }

@@ -49,12 +49,16 @@ const ProductList = () => {
             })
             .catch(error => console.log(error));
     }
+    const breadcrumbsFunction = () => {
+        resetData();
+        setActive(!product)
+    }
     return (
         <div>
             {
                 active
                     ? <Page
-                        breadcrumbs={[{ content: 'Products', onAction: () => setActive(!product) }]}
+                        breadcrumbs={[{ content: 'Products', onAction: () => breadcrumbsFunction() }]}
                     >
                         <Productlayout />
                     </Page>
