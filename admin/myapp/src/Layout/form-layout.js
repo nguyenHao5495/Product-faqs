@@ -23,14 +23,6 @@ const Formlayout = (data) => {
         { label: 'No', value: '0' },
     ];
     useEffect(() => {
-        if (data) {
-            console.log(data);
-            setNameQuestion(data.data.faqs_name);
-            setEmailQuestion(data.data.faqs_email);
-            setContentQuestion(data.data.faqs_question);
-            setValueTimePublish(data.data.publishdate);
-            setSelectedQuestion(data.data.publish)
-        }
         let dataQuestion = {
             product_id: "",
             faqs_name: nameQuestion,
@@ -96,7 +88,7 @@ const Formlayout = (data) => {
                     <div className="date_time">
                         <label>Publish date</label>
                         <DatePicker
-                            defaultValue={moment(valueTimePublish, "DD/MM/YYYY HH:mm")}
+                            value={moment(valueTimePublish, "DD/MM/YYYY HH:mm")}
                             showTime={{ format: 'HH:mm' }}
                             format="DD/MM/YYYY HH:mm"
                             onChange={onChangeDateQuestion} />
@@ -120,7 +112,7 @@ const Formlayout = (data) => {
                     <div className="date_time">
                         <label>Publish date</label>
                         <DatePicker
-                            defaultValue={moment(valueTimeAnswer, "DD/MM/YYYY HH:mm")}
+                            value={moment(valueTimeAnswer, "DD/MM/YYYY HH:mm")}
                             showTime={{ format: 'HH:mm' }}
                             format="DD/MM/YYYY HH:mm"
                             onChange={onChangeDateAnswer} />

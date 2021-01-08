@@ -12,6 +12,7 @@ import {
 } from '@shopify/polaris-icons';
 import store from '../Store';
 import Formlayout from './form-layout';
+import EditLayout from './Edit-layout';
 
 //-------------Render----------------//
 
@@ -30,6 +31,7 @@ const Productlayout = () => {
     const [valueSearch, setValueSearch] = useState("");
 
     const [lock, setLock] = useState({});
+    const [close, setClose] = useState({});
     const [activeToast, setactiveToast] = useState(false);
     const [toast, setToast] = useState("");
     const [error, setError] = useState(false);
@@ -100,6 +102,10 @@ const Productlayout = () => {
                 destructive: true,
                 onAction: () => lockFaqbyApi(id),
             })
+            setClose({
+                content: 'Close',
+                onAction: closePopup,
+            })
             setContent("Are you sure you want to lock this question? No one can reply this.");
             setActiveModal(!activeModal);
         }
@@ -113,6 +119,10 @@ const Productlayout = () => {
                 content: 'Agree Test',
                 destructive: true,
                 onAction: () => UnlockFaqbyApi(id),
+            })
+            setClose({
+                content: 'Close',
+                onAction: closePopup,
             })
             setContent("Are you sure you want to lock this question? No one can reply this.");
             setActiveModal(!activeModal);
@@ -128,6 +138,10 @@ const Productlayout = () => {
                 destructive: true,
                 onAction: () => DeleteFaqbyApi(id),
             })
+            setClose({
+                content: 'Close',
+                onAction: closePopup,
+            })
             setContent("Are you sure you want to delete this question? This action cannot be undone.");
             setActiveModal(!activeModal);
         }
@@ -136,12 +150,10 @@ const Productlayout = () => {
         setError(false);
         if (data) {
             setTitle("Edit question");
-            setLock({
-                content: 'Save',
-                Primary: false,
-            })
+            setLock("")
+            setClose("")
             setContent(
-                <Formlayout data={data} />
+                <EditLayout data={data} resetFaqs1={resetFaqs1} />
             )
             setActiveModal(!activeModal);
         }
@@ -175,6 +187,14 @@ const Productlayout = () => {
             .then(data => {
                 setFaqs(data.data.faqs)
                 setActiveModal(false);
+            })
+            .catch(error => console.log(error));
+    }
+    const resetFaqs1 = () => {
+        const productId = store.getState().store.getaProduct.id
+        axios.get(`${Config.rootLink}/admin/functions/faqs.php?action=getQuestionsByProductId&shop=${Config.shop}&id=${productId}`)
+            .then(data => {
+                setFaqs(data.data.faqs)
             })
             .catch(error => console.log(error));
     }
@@ -247,6 +267,10 @@ const Productlayout = () => {
                 content: 'Save',
                 Primary: false,
                 onAction: addNewQuestion
+            })
+            setClose({
+                content: 'Close',
+                onAction: closePopup,
             })
             setContent(
                 <Formlayout />
@@ -336,6 +360,7 @@ const Productlayout = () => {
                                     )} />
                                 <Column title="Last Answer"
                                     sorter={(a, b) => a.answer_lists.length - b.answer_lists.length}
+                                    width='35%'
                                     render={(text, record) => (
                                         <div className="faqs-item" >
                                             {record.answer_lists.length > 0
@@ -344,9 +369,9 @@ const Productlayout = () => {
                                                     renderItem={item => (
                                                         <div className="answer_lists">
                                                             <div className="answer_title">
-                                                                <Icon
-                                                                    source={ConversationMinor} />
-                                                                <span className="answer_cus">{item.answer}</span>
+
+                                                                <span className="answer_cus"><Icon
+                                                                    source={ConversationMinor} />{item.answer}</span>
                                                             </div>
                                                             <div className="answer_time">{item.publishdate}</div>
                                                         </div>
@@ -427,12 +452,13 @@ const Productlayout = () => {
                                     )} />
                             </Table>
                         </Card>
-                        {
-                            activeToast &&
+                        <div className="hidden">
                             <Frame>
                                 {toastMarkup}
                             </Frame>
-                        }
+                        </div>
+
+
 
                     </div>
                     : <div className="text-center">
@@ -444,12 +470,8 @@ const Productlayout = () => {
                 onClose={() => setActiveModal(false)}
                 title={title}
                 primaryAction={lock}
-                secondaryActions={[
-                    {
-                        content: 'Close',
-                        onAction: closePopup,
-                    },
-                ]}
+
+                secondaryActions={close}
             >
                 <Modal.Section>
                     <TextContainer>

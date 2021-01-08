@@ -10,12 +10,16 @@
 	-moz-transition: all 0.6s ease;
 	transition: all 0.6s ease;
 }
-
 body {
     font-family: "Roboto Condensed",sans-serif;
     font-size: 14px;
     background-color: #f4f6f8;
-    
+}
+.hidden{
+  display: none;
+}
+.posion-relative{
+  position: relative;
 }
 .wrapper{
   margin: 0 auto;
@@ -268,19 +272,18 @@ h1,h2,h3,h4,h5,h6{
 }
 //-----------answer_lists--------------//
 .answer_lists{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin-bottom:10px;
   &:last-child{
     margin-bottom: 0;
   }
   .answer_title{
     font-weight: 500;
-    display: flex;
-    align-items: center;
     .answer_cus{
-      padding-left:5px;
+      .Polaris-Icon{
+        margin-right:10px;
+        display: inline-block;
+      }
+     
       
     }
     .Polaris-Icon{
@@ -290,6 +293,7 @@ h1,h2,h3,h4,h5,h6{
     }
   }
   .answer_time{
+    text-align: right;
     color: #999;
   }
 

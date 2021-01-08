@@ -43,7 +43,7 @@ const TabsFunction = () => {
                 </div>
             ),
             data: (
-                <ProductList />
+                <div>abc</div>
             ),
             panelID: 'accepts-marketing-content',
         },
