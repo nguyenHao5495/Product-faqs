@@ -33,6 +33,19 @@ h1,h2,h3,h4,h5,h6{
   padding: 0;
   max-width: 109.8rem;
 }
+.fload-right{
+  float: right;
+}
+.btn_add{
+
+  .Polaris-Button__Text{
+    display: flex;
+    align-items: center;
+    .Polaris-Icon{
+      margin-right: 10px;
+    }
+  }
+}
 //-------------Tabs------------//
 .Polaris-Tabs {
     justify-content: left;
