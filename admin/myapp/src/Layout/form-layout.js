@@ -75,7 +75,7 @@ const Formlayout = (data) => {
             <FormLayout>
                 <FormLayout.Group condensed>
                     <TextField label="Name" value={nameQuestion} onChange={onChangeNameQuestion} />
-                    <TextField label="Email" value={emailQuestion} onChange={onChangeEmailQuestion} />
+                    <TextField label="Email" type="email" value={emailQuestion} onChange={onChangeEmailQuestion} />
                 </FormLayout.Group>
                 <TextField label="Question" value={contentQuestion} onChange={onChangeContentQuestion} />
                 <FormLayout.Group condensed>

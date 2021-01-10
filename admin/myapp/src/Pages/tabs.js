@@ -6,6 +6,7 @@ import {
     SettingsMajor,
     EmailMajor
 } from '@shopify/polaris-icons';
+import SettingsApp from '../Components/SettingsApp';
 const TabsFunction = () => {
     const [selected, setSelected] = useState(0);
 
@@ -43,7 +44,7 @@ const TabsFunction = () => {
                 </div>
             ),
             data: (
-                <div>abc</div>
+                <SettingsApp />
             ),
             panelID: 'accepts-marketing-content',
         },

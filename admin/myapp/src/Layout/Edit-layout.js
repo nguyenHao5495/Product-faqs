@@ -27,10 +27,6 @@ const EditLayout = (dataFaqs) => {
         { label: 'Yes', value: '1' },
         { label: 'No', value: '0' },
     ];
-    const options1 = [
-        { label: 'Yes', value: '1' },
-        { label: 'No', value: '0' },
-    ];
     useEffect(() => {
         console.log(dataFaqs);
         setHtmlList(prevArray => [...prevArray, ...dataFaqs.data.answer_lists]);
@@ -48,7 +44,7 @@ const EditLayout = (dataFaqs) => {
             }
         }
         setHtmlList(edit);
-    })
+    }, [htmlList])
     const setEmailAnswer = useCallback((data, value, index) => {
         const edit = [...htmlList];
         for (let i = 0; i < edit.length; i++) {
@@ -57,7 +53,7 @@ const EditLayout = (dataFaqs) => {
             }
         }
         setHtmlList(edit);
-    })
+    }, [htmlList])
     const setContentAnswer = useCallback((data, value, index) => {
         const edit = [...htmlList];
         for (let i = 0; i < edit.length; i++) {
@@ -66,7 +62,7 @@ const EditLayout = (dataFaqs) => {
             }
         }
         setHtmlList(edit);
-    })
+    }, [htmlList])
     const setPublishAnswer = useCallback((data, value, index) => {
         const edit = [...htmlList];
         for (let i = 0; i < edit.length; i++) {
@@ -75,7 +71,7 @@ const EditLayout = (dataFaqs) => {
             }
         }
         setHtmlList(edit);
-    })
+    }, [htmlList])
     const setDateAnswer = useCallback((value, dateString, index) => {
         const edit = [...htmlList];
         for (let i = 0; i < edit.length; i++) {
@@ -84,12 +80,12 @@ const EditLayout = (dataFaqs) => {
             }
         }
         setHtmlList(edit);
-    })
+    }, [htmlList])
     const listItems = htmlList.map((item, index) =>
         <FormLayout key={index}>
             <FormLayout.Group condensed>
                 <TextField label="Name" value={item.name} onChange={(value) => setNameAnswer(item, value, index)} />
-                <TextField label="Email" value={item.email} onChange={(value) => setEmailAnswer(item, value, index)} />
+                <TextField label="Email" type="email" value={item.email} onChange={(value) => setEmailAnswer(item, value, index)} />
             </FormLayout.Group>
             <TextField label="Answer" value={item.answer} onChange={(value) => setContentAnswer(item, value, index)} />
             <FormLayout.Group condensed>
@@ -214,6 +210,7 @@ const EditLayout = (dataFaqs) => {
             publish: selectedQuestion,
             publishdate: valueTimePublish
         }
+        console.log(dataEdit);
         if (dataEdit) {
             let formData = new FormData();
             formData.append("id", dataFaqs.data.id);
@@ -242,7 +239,7 @@ const EditLayout = (dataFaqs) => {
             <FormLayout>
                 <FormLayout.Group condensed>
                     <TextField label="Name" value={nameQuestion} onChange={onChangeNameQuestion} />
-                    <TextField label="Email" value={emailQuestion} onChange={onChangeEmailQuestion} />
+                    <TextField label="Email" type="email" value={emailQuestion} onChange={onChangeEmailQuestion} />
                 </FormLayout.Group>
                 <TextField label="Question" value={contentQuestion} onChange={onChangeContentQuestion} />
                 <FormLayout.Group condensed>
